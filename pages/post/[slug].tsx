@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import React from "react";
 import Header from "../../components/Header";
-import { sanityClient, urlFor } from "../../sanity";
+import { sanityClient } from "../../sanity";
 import { Post } from "../../typings";
 import Article from "../../components/Article";
 import Comments from "../../components/Comments";
@@ -15,18 +15,8 @@ const Post = ({ post }: Props) => {
   return (
     <main>
       <Header />
-
-      <img
-        className="w-full h-40 object-cover"
-        src={urlFor(post.mainImage).url()!}
-        alt={post.title}
-      />
-
       <Article post={post} />
-      <hr className="max-w-lg my-5 mx-auto border border-yellow-500" />
-
       <Form post={post} />
-
       <Comments post={post} />
     </main>
   );
