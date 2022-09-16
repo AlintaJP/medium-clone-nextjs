@@ -65,20 +65,20 @@ const Form = ({ post }: Props) => {
           />
 
           <FormField
-            {...register("name", { required: true })}
+            register={register("name", { required: true })}
             label="Name"
             placeholder="Yegor Golovach"
           />
 
           <FormField
-            {...register("email", { required: true })}
+            register={register("email", { required: true })}
             label="Email"
             type="email"
             placeholder="yegor.golovach@mail.com"
           />
 
           <FormField
-            {...register("comment", { required: true })}
+            register={register("comment", { required: true })}
             label="Comment"
             textarea
             placeholder="Type your comment here..."
